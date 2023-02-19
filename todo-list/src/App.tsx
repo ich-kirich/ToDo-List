@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AddNote />
+      <AddNote listNotes={listNotes} setListNotes={setListNotes} />
       <ListNotes listNotes={listNotes} setListNotes={setListNotes} />
     </div>
   );
