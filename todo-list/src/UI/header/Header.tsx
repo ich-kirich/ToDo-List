@@ -1,5 +1,7 @@
+import styles from "./Header.module.scss";
+
 function Header() {
-  return <h1>To Do List</h1>;
+  return <div className={styles.logo}>To Do List</div>;
 }
 
 export default Header;
