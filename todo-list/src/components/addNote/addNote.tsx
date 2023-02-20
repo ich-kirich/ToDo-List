@@ -12,7 +12,7 @@ function AddNote(props: { listNotes: INote[]; setListNotes: Function }) {
       setListNotes([
         ...listNotes,
         {
-          id: listNotes.length + 1,
+          id: Date.now(),
           body: value,
           status: true,
         },

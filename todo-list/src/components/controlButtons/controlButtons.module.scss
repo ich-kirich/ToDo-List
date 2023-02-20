@@ -1,0 +1,44 @@
+%backimg {
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 100% 100%;
+}
+
+%rulebuttons {
+    @extend %backimg;
+    background-size: 30px 17px;
+    padding: 5px 13px;
+    background-color: #297EFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    &:hover {
+        background-color: #000000;
+    }
+}
+
+.management {
+    display: flex;
+    gap: 5px;
+    
+    &__delete {
+        background-image: url(../../img/delete.svg);
+        @extend %rulebuttons;
+    }
+
+    &__edit {
+        background-image: url(../../img/edit.svg);
+        @extend %rulebuttons;
+    }
+
+    &__statusOk {
+        background-image: url(../../img/inProgress.svg);
+        @extend %rulebuttons;
+    }
+
+    &__statusClose {
+        background-image: url(../../img/completed.svg);
+        @extend %rulebuttons;
+    }
+}

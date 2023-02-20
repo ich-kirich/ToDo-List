@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { INote } from "../../types/types";
 import styles from "./listNotes.module.scss";
+import EditFiled from "../editFiled/editField";
+import ControlButtons from "../controlButtons/controlButtons";
 
 function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
   const { listNotes } = props;
@@ -8,12 +10,12 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
   const [edit, setEdit] = useState(0);
   const [value, setValue] = useState("");
 
-  function deleteNote(id: number) {
+  const deleteNote = (id: number) => {
     const updateListNotes = [...listNotes].filter((note) => note.id !== id);
     setListNotes(updateListNotes);
-  }
+  };
 
-  function changeStatus(id: number) {
+  const changeStatus = (id: number) => {
     const updateListNotes = [...listNotes].map((note) => {
       if (note.id === id) {
         note.status = !note.status;
@@ -21,14 +23,14 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
       return note;
     });
     setListNotes(updateListNotes);
-  }
+  };
 
-  function editNote(id: number, body: string) {
+  const editNote = (id: number, body: string) => {
     setEdit(id);
     setValue(body);
-  }
+  };
 
-  function updateNote(id: number) {
+  const updateNote = (id: number) => {
     if (value) {
       const updateListNotes = [...listNotes].map((note) => {
         if (note.id === id) {
@@ -41,7 +43,7 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
       deleteNote(id);
     }
     setEdit(0);
-  }
+  };
 
   return (
     <div className={styles.notes}>
@@ -51,21 +53,12 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
           className={[styles.notes__note, styles.note].join(" ")}
         >
           {edit === note.id ? (
-            <div className={[styles.note__editNote, styles.editNote].join(" ")}>
-              <input
-                type="text"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                className={styles.editNote__inp}
-              />
-              <button
-                type="button"
-                onClick={() => updateNote(note.id)}
-                className={styles.editNote__save}
-              >
-                &nbsp;
-              </button>
-            </div>
+            <EditFiled
+              value={value}
+              setValue={setValue}
+              updateNote={updateNote}
+              id={note.id}
+            />
           ) : (
             <div
               className={
@@ -75,35 +68,12 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
               {note.body}
             </div>
           )}
-          <div
-            className={[styles.management, styles.note__management].join(" ")}
-          >
-            <button
-              type="button"
-              onClick={() => deleteNote(note.id)}
-              className={styles.management__delete}
-            >
-              &nbsp;
-            </button>
-            <button
-              type="button"
-              onClick={() => changeStatus(note.id)}
-              className={
-                !note.status
-                  ? styles.management__statusOk
-                  : styles.management__statusClose
-              }
-            >
-              &nbsp;
-            </button>
-            <button
-              type="button"
-              onClick={() => editNote(note.id, note.body)}
-              className={styles.management__edit}
-            >
-              &nbsp;
-            </button>
-          </div>
+          <ControlButtons
+            note={note}
+            deleteNote={deleteNote}
+            changeStatus={changeStatus}
+            editNote={editNote}
+          />
         </div>
       ))}
     </div>
