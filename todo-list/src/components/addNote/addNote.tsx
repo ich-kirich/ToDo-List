@@ -14,7 +14,7 @@ function AddNote(props: { listNotes: INote[]; setListNotes: Function }) {
         {
           id: Date.now(),
           body: value,
-          status: true,
+          status: false,
         },
       ];
       setListNotes(updateListNotes);

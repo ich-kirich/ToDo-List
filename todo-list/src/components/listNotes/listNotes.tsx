@@ -3,12 +3,19 @@ import { INote } from "../../types/types";
 import styles from "./listNotes.module.scss";
 import EditFiled from "../editFiled/editField";
 import ControlButtons from "../controlButtons/controlButtons";
+import { useSortedPosts } from "../../hooks/useNotes";
 
-function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
-  const { listNotes } = props;
+function ListNotes(props: {
+  listNotes: INote[];
+  setListNotes: Function;
+  typeSort: string;
+}) {
+  let { listNotes } = props;
   const { setListNotes } = props;
+  const { typeSort } = props;
   const [edit, setEdit] = useState(0);
   const [value, setValue] = useState("");
+  listNotes = useSortedPosts(listNotes, typeSort);
 
   const deleteNote = (id: number) => {
     const updateListNotes = [...listNotes].filter((note) => note.id !== id);

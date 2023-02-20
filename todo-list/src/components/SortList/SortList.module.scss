@@ -1,0 +1,29 @@
+.chooseSort {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-self: flex-start;
+    width: 210px;
+    height: 90px;
+    margin-top: 10px;
+    margin-left: 46px;
+    background-color: #0000FF;
+    border-radius: 20px;
+    padding: 0px 20px;
+
+    &__typeSort {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .typeSort {
+        &__text {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            line-height: 10px;
+        }
+    }
+}
