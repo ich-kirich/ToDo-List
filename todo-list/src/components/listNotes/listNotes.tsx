@@ -13,6 +13,7 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
   const deleteNote = (id: number) => {
     const updateListNotes = [...listNotes].filter((note) => note.id !== id);
     setListNotes(updateListNotes);
+    localStorage.setItem("notes", JSON.stringify(updateListNotes));
   };
 
   const changeStatus = (id: number) => {
@@ -23,6 +24,7 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
       return note;
     });
     setListNotes(updateListNotes);
+    localStorage.setItem("notes", JSON.stringify(updateListNotes));
   };
 
   const editNote = (id: number, body: string) => {
@@ -39,6 +41,7 @@ function ListNotes(props: { listNotes: INote[]; setListNotes: Function }) {
         return note;
       });
       setListNotes(updateListNotes);
+      localStorage.setItem("notes", JSON.stringify(updateListNotes));
     } else {
       deleteNote(id);
     }

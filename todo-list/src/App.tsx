@@ -3,25 +3,16 @@ import AddNote from "./components/addNote/addNote";
 import ListNotes from "./components/listNotes/listNotes";
 import Header from "./UI/header/Header";
 import "./styles/style.scss";
+import { INote } from "./types/types";
 
 function App() {
-  const [listNotes, setListNotes] = useState([
-    {
-      id: 1,
-      body: "fist Note",
-      status: true,
-    },
-    {
-      id: 2,
-      body: "second Note",
-      status: true,
-    },
-    {
-      id: 3,
-      body: "third Note",
-      status: false,
-    },
-  ]);
+  let loadNotes: INote[] = [];
+  if (localStorage.getItem("notes")) {
+    loadNotes = JSON.parse(localStorage.getItem("notes") as string);
+  } else {
+    loadNotes = [];
+  }
+  const [listNotes, setListNotes] = useState(loadNotes);
   return (
     <div className="App">
       <Header />

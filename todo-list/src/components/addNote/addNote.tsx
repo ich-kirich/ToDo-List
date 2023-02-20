@@ -9,14 +9,16 @@ function AddNote(props: { listNotes: INote[]; setListNotes: Function }) {
 
   function saveNote() {
     if (value) {
-      setListNotes([
+      const updateListNotes = [
         ...listNotes,
         {
           id: Date.now(),
           body: value,
           status: true,
         },
-      ]);
+      ];
+      setListNotes(updateListNotes);
+      localStorage.setItem("notes", JSON.stringify(updateListNotes));
     }
     setValue("");
   }
