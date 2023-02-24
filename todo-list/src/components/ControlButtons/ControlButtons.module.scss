@@ -22,22 +22,22 @@
     display: flex;
     gap: 5px;
     
-    &__delete {
+    .management__delete {
         background-image: url(../../img/delete.svg);
         @extend %rulebuttons;
     }
 
-    &__edit {
+    .management__edit {
         background-image: url(../../img/edit.svg);
         @extend %rulebuttons;
     }
 
-    &__statusOk {
+    .management__statusOk {
         background-image: url(../../img/inProgress.svg);
         @extend %rulebuttons;
     }
 
-    &__statusClose {
+    .management__statusClose {
         background-image: url(../../img/completed.svg);
         @extend %rulebuttons;
     }

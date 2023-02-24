@@ -24,7 +24,7 @@ $border-styles: 1px solid #9797AF;
     display: flex;
     width: 80%;
     justify-content: space-between;
-    &__inp {
+    .editNote__inp {
         width: 90%;
         padding: 0px 10px;
         border-radius: 20px;
@@ -32,7 +32,7 @@ $border-styles: 1px solid #9797AF;
         color: #2b2b30;
     }
 
-    &__save {
+    .editNote__save {
         background-image: url(../../img/save.svg);
         @extend %rulebuttons;
     }

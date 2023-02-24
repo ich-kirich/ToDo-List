@@ -59,10 +59,7 @@ function ListNotes(props: {
   return (
     <div className={styles.notes}>
       {listNotes.map((note) => (
-        <div
-          key={note.id}
-          className={[styles.notes__note, styles.note].join(" ")}
-        >
+        <div key={note.id} className={styles.notes__note}>
           {edit === note.id ? (
             <EditFiled
               value={value}

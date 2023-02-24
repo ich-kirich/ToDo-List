@@ -15,7 +15,7 @@ function SortList(props: { typeSort: string; setTypeSort: Function }) {
   }
   return (
     <div className={styles.chooseSort}>
-      <div className={[styles.chooseSort__typeSort, styles.typeSort].join(" ")}>
+      <div className={styles.chooseSort__typeSort}>
         <input
           type="radio"
           name="sort"
@@ -25,7 +25,7 @@ function SortList(props: { typeSort: string; setTypeSort: Function }) {
         />
         <span className={styles.typeSort__text}>Сортировка по алфавиту</span>
       </div>
-      <div className={[styles.chooseSort__typeSort, styles.typeSort].join(" ")}>
+      <div className={styles.chooseSort__typeSort}>
         <input
           type="radio"
           name="sort"

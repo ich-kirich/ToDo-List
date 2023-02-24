@@ -12,18 +12,17 @@
     border-radius: 20px;
     padding: 0px 20px;
 
-    &__typeSort {
+    .chooseSort__typeSort {
         display: flex;
         align-items: center;
         gap: 5px;
     }
 
-    .typeSort {
-        &__text {
-            margin: 0;
-            font-family: Helvetica, Arial, sans-serif;
-            font-weight: 300;
-            line-height: 10px;
-        }
+    .typeSort__text {
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        line-height: 10px;
+        color: #fff;
     }
 }
