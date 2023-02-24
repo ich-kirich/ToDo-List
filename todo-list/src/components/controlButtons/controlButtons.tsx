@@ -1,5 +1,5 @@
 import { INote } from "../../types/types";
-import styles from "./controlButtons.module.scss";
+import styles from "./ControlButtons.module.scss";
 
 function ControlButtons(props: {
   note: INote;

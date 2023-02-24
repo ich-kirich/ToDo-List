@@ -1,4 +1,4 @@
-import styles from "./editField.module.scss";
+import styles from "./EditField.module.scss";
 
 function EditFiled(props: {
   value: string;

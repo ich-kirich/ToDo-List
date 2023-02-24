@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AddNote from "./components/addNote/addNote";
-import ListNotes from "./components/listNotes/listNotes";
-import Header from "./UI/header/Header";
+import AddNote from "./components/AddNote/AddNote";
+import ListNotes from "./components/ListNotes/ListNotes";
+import Header from "./components/Header/Header";
 import "./styles/style.scss";
 import { INote } from "./types/types";
 import SortList from "./components/SortList/SortList";

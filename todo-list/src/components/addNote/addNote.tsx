@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { INote } from "../../types/types";
-import styles from "./addNote.module.scss";
+import styles from "./AddNote.module.scss";
 
 function AddNote(props: { listNotes: INote[]; setListNotes: Function }) {
   const [value, setValue] = useState("");

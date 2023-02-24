@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { INote } from "../../types/types";
-import styles from "./listNotes.module.scss";
-import EditFiled from "../editFiled/editField";
-import ControlButtons from "../controlButtons/controlButtons";
+import styles from "./ListNotes.module.scss";
+import EditFiled from "../EditFiled/EditField";
+import ControlButtons from "../ControlButtons/ControlButtons";
 import { useSortedPosts } from "../../hooks/useNotes";
 
 function ListNotes(props: {
