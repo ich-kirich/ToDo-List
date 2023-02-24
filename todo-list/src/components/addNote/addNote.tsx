@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { INote } from "../../types/types";
 import styles from "./AddNote.module.scss";
+import { keyNotes } from "../../utils/notes";
 
 function AddNote(props: { listNotes: INote[]; setListNotes: Function }) {
   const [value, setValue] = useState("");
@@ -18,7 +19,7 @@ function AddNote(props: { listNotes: INote[]; setListNotes: Function }) {
         },
       ];
       setListNotes(updateListNotes);
-      localStorage.setItem("notes", JSON.stringify(updateListNotes));
+      localStorage.setItem(keyNotes, JSON.stringify(updateListNotes));
     }
     setValue("");
   }

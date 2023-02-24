@@ -1,11 +1,12 @@
 import styles from "./SortList.module.scss";
+import { defaultTypeSort } from "../../utils/notes";
 
 function SortList(props: { typeSort: string; setTypeSort: Function }) {
   const { typeSort } = props;
   const { setTypeSort } = props;
   let sortBody;
   let sortStatus;
-  if (typeSort === "body") {
+  if (typeSort === defaultTypeSort) {
     sortBody = true;
     sortStatus = false;
   } else {

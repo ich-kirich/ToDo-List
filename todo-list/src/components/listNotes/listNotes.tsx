@@ -4,6 +4,7 @@ import styles from "./ListNotes.module.scss";
 import EditFiled from "../EditFiled/EditField";
 import ControlButtons from "../ControlButtons/ControlButtons";
 import { useSortedPosts } from "../../hooks/useNotes";
+import { keyNotes } from "../../utils/notes";
 
 function ListNotes(props: {
   listNotes: INote[];
@@ -20,7 +21,7 @@ function ListNotes(props: {
   const deleteNote = (id: number) => {
     const updateListNotes = [...listNotes].filter((note) => note.id !== id);
     setListNotes(updateListNotes);
-    localStorage.setItem("notes", JSON.stringify(updateListNotes));
+    localStorage.setItem(keyNotes, JSON.stringify(updateListNotes));
   };
 
   const changeStatus = (id: number) => {
@@ -31,7 +32,7 @@ function ListNotes(props: {
       return note;
     });
     setListNotes(updateListNotes);
-    localStorage.setItem("notes", JSON.stringify(updateListNotes));
+    localStorage.setItem(keyNotes, JSON.stringify(updateListNotes));
   };
 
   const editNote = (id: number, body: string) => {
@@ -48,7 +49,7 @@ function ListNotes(props: {
         return note;
       });
       setListNotes(updateListNotes);
-      localStorage.setItem("notes", JSON.stringify(updateListNotes));
+      localStorage.setItem(keyNotes, JSON.stringify(updateListNotes));
     } else {
       deleteNote(id);
     }
