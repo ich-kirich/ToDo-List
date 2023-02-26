@@ -1,3 +1,4 @@
+import ControlButton from "../ControlButton/ControlButton";
 import styles from "./EditField.module.scss";
 
 function EditFiled(props: {
@@ -18,13 +19,13 @@ function EditFiled(props: {
         onChange={(e) => setValue(e.target.value)}
         className={styles.editNote__inp}
       />
-      <button
+      <ControlButton
         type="button"
         onClick={() => updateNote(id)}
         className={styles.editNote__save}
       >
         &nbsp;
-      </button>
+      </ControlButton>
     </div>
   );
 }

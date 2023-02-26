@@ -1,7 +1,8 @@
 import { INote } from "../../types/types";
-import styles from "./ControlButtons.module.scss";
+import ControlButton from "../ControlButton/ControlButton";
+import styles from "./ControlPanel.module.scss";
 
-function ControlButtons(props: {
+function ControlPanel(props: {
   note: INote;
   deleteNote: Function;
   changeStatus: Function;
@@ -13,15 +14,13 @@ function ControlButtons(props: {
   const { editNote } = props;
   return (
     <div className={styles.management}>
-      <button
-        type="button"
+      <ControlButton
         onClick={() => deleteNote(note.id)}
         className={styles.management__delete}
       >
         &nbsp;
-      </button>
-      <button
-        type="button"
+      </ControlButton>
+      <ControlButton
         onClick={() => changeStatus(note.id)}
         className={
           !note.status
@@ -30,16 +29,15 @@ function ControlButtons(props: {
         }
       >
         &nbsp;
-      </button>
-      <button
-        type="button"
+      </ControlButton>
+      <ControlButton
         onClick={() => editNote(note.id, note.body)}
         className={styles.management__edit}
       >
         &nbsp;
-      </button>
+      </ControlButton>
     </div>
   );
 }
 
-export default ControlButtons;
+export default ControlPanel;

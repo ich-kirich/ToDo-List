@@ -1,40 +1,24 @@
 import styles from "./SortList.module.scss";
-import { defaultTypeSort } from "../../utils/notes";
+import { bodyProperty, statusProperty } from "../../utils/notes";
+import SortInput from "../SortInput/SortInput";
 
 function SortList(props: { typeSort: string; setTypeSort: Function }) {
   const { typeSort } = props;
   const { setTypeSort } = props;
-  let sortBody;
-  let sortStatus;
-  if (typeSort === defaultTypeSort) {
-    sortBody = true;
-    sortStatus = false;
-  } else {
-    sortBody = false;
-    sortStatus = true;
-  }
+  const sortTypeBody = typeSort === bodyProperty;
+  const sortTypeStatus = !sortTypeBody;
   return (
     <div className={styles.chooseSort}>
-      <div className={styles.chooseSort__typeSort}>
-        <input
-          type="radio"
-          name="sort"
-          id="body"
-          onChange={(e) => setTypeSort(e.currentTarget.id)}
-          checked={!!sortBody}
-        />
-        <span className={styles.typeSort__text}>Сортировка по алфавиту</span>
-      </div>
-      <div className={styles.chooseSort__typeSort}>
-        <input
-          type="radio"
-          name="sort"
-          id="status"
-          onChange={(e) => setTypeSort(e.currentTarget.id)}
-          checked={!!sortStatus}
-        />
-        <span className={styles.typeSort__text}>Сортировка по статусу</span>
-      </div>
+      <SortInput
+        id={bodyProperty}
+        onChange={(e) => setTypeSort(e.currentTarget.id)}
+        checked={sortTypeBody}
+      />
+      <SortInput
+        id={statusProperty}
+        onChange={(e) => setTypeSort(e.currentTarget.id)}
+        checked={sortTypeStatus}
+      />
     </div>
   );
 }

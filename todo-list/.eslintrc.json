@@ -29,7 +29,7 @@
     "rules": {
         "react/react-in-jsx-scope": ["off"],
         "react/jsx-uses-react": ["off"],
-        "react/jsx-props-no-spreading": ["warn"],
+        "react/jsx-props-no-spreading": "off",
         "react/no-unescaped-entities": ["off"],
         "no-debugger": "off",
         "no-console": 0,
@@ -39,6 +39,7 @@
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/no-var-requires": "off",
         "import/no-named-as-default": 0,
-        "no-param-reassign": 0
+        "no-param-reassign": 0,
+        "react/prop-types": "off"
     }
 }

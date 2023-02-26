@@ -1,13 +1,13 @@
 import { useMemo } from "react";
 import { INote } from "../types/types";
-import { defaultTypeSort, sortByStatus } from "../utils/notes";
+import { bodyProperty, statusProperty } from "../utils/notes";
 
 export const useSortedPosts = (notes: INote[], type: string) => {
   const sortedPosts = useMemo(() => {
-    if (type === defaultTypeSort) {
+    if (type === bodyProperty) {
       return [...notes].sort((a, b) => a.body.localeCompare(b.body));
     }
-    if (type === sortByStatus) {
+    if (type === statusProperty) {
       return [...notes].sort((x, y) => {
         return Number(x.status) - Number(y.status);
       });
