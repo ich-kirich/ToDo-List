@@ -6,14 +6,7 @@ import "./styles/style.scss";
 import { INote } from "./types/types";
 import SortList from "./components/SortList/SortList";
 import useSortedPosts from "./hooks/useNotes";
-import {
-  keyNotes,
-  bodyProperty,
-  Context,
-  changePropertyNote,
-  saveNotes,
-  statusProperty,
-} from "./utils/notes";
+import { keyNotes, bodyProperty, Context } from "./utils/notes";
 
 function App() {
   const loadNotesFromStorage = () => {

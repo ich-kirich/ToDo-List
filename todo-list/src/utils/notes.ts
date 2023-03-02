@@ -5,6 +5,8 @@ export const keyNotes = "notes";
 export const bodyProperty = "body";
 export const statusProperty = "status";
 
+export const Context = React.createContext({} as IContextNote);
+
 export function saveNotes(setListNotes: Function, updateListNotes: INote[]) {
   setListNotes(updateListNotes);
   localStorage.setItem(keyNotes, JSON.stringify(updateListNotes));
@@ -47,5 +49,3 @@ export function changePropertyNote(
   });
   saveNotes(setListNotes, updateListNotes);
 }
-
-export const Context = React.createContext({} as IContextNote);

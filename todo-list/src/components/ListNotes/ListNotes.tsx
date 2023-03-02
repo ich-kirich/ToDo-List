@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import styles from "./ListNotes.module.scss";
-import { useSortedPosts } from "../../hooks/useNotes";
+import { useSortedNotes } from "../../hooks/useNotes";
 import Notes from "../Notes/Notes";
 import { Context } from "../../utils/notes";
 
 function ListNotes(props: { typeSort: string }) {
   const { typeSort } = props;
   const { notes } = useContext(Context);
-  const listNotes = useSortedPosts(notes, typeSort);
+  const listNotes = useSortedNotes(notes, typeSort);
 
   return (
     <div className={styles.notes}>

@@ -2,8 +2,8 @@ import { useMemo } from "react";
 import { INote } from "../types/types";
 import { bodyProperty, statusProperty } from "../utils/notes";
 
-export const useSortedPosts = (notes: INote[], type: string) => {
-  const sortedPosts = useMemo(() => {
+export const useSortedNotes = (notes: INote[], type: string) => {
+  const sortedNotes = useMemo(() => {
     if (type === bodyProperty) {
       return [...notes].sort((a, b) => a.body.localeCompare(b.body));
     }
@@ -14,7 +14,7 @@ export const useSortedPosts = (notes: INote[], type: string) => {
     }
     return notes;
   }, [notes, type]);
-  return sortedPosts;
+  return sortedNotes;
 };
 
-export default useSortedPosts;
+export default useSortedNotes;
