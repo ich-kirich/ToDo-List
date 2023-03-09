@@ -1,16 +1,17 @@
-.editNote {
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    .editNote__inp {
-        width: 90%;
-        padding: 0px 10px;
-        border-radius: 20px;
-        border: 1px solid #9797AF;
-        color: #2b2b30;
-    }
+.edit__note {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
 
-    .editNote__save {
-        background-image: url(../../img/save.svg);
-    }
+.note__inp {
+  width: 90%;
+  padding: 0px 10px;
+  border-radius: 20px;
+  border: 1px solid #9797AF;
+  color: #2b2b30;
+}
+
+.note__save {
+  background-image: url(../../img/save.svg);
 }

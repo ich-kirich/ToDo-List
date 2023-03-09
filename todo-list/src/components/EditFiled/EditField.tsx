@@ -1,28 +1,24 @@
+import { IEditField } from "../../types/types";
 import ControlButton from "../ControlButton/ControlButton";
 import styles from "./EditField.module.scss";
 
-function EditFiled(props: {
-  value: string;
-  setValue: Function;
-  updateNote: Function;
-  id: number;
-}) {
+function EditFiled(props: IEditField) {
   const { value } = props;
   const { setValue } = props;
   const { updateNote } = props;
   const { id } = props;
   return (
-    <div className={styles.editNote}>
+    <div className={styles.edit__note}>
       <input
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className={styles.editNote__inp}
+        className={styles.note__inp}
       />
       <ControlButton
         type="button"
         onClick={() => updateNote(id)}
-        className={styles.editNote__save}
+        className={styles.note__save}
       >
         &nbsp;
       </ControlButton>

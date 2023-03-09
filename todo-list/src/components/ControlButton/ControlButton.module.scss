@@ -1,23 +1,24 @@
 %backimg {
-    background-repeat: no-repeat;
-    background-position: 0 center;
-    background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  background-size: 100% 100%;
 }
 
 %rulebuttons {
-    padding: 5px 13px;
-    border: none;
-    border-radius: 5px;
-    @extend %backimg;
-    background-size: 30px 17px;
-    background-color: #297EFF;
-    cursor: pointer;
-    transition: background-color 0.5s;
-    &:hover {
-        background-color: #000000;
-    }
+  padding: 5px 13px;
+  border: none;
+  border-radius: 5px;
+  @extend %backimg;
+  background-size: 30px 17px;
+  background-color: #297EFF;
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: #000000;
+  }
 }
 
 .controlBtn {
-    @extend %rulebuttons;
+  @extend %rulebuttons;
 }

@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
+import { CONTEXT } from "../../libs/constants";
+import { saveNoteToList } from "../../libs/notes";
 import styles from "./AddNote.module.scss";
-import { saveNoteToList, Context } from "../../utils/notes";
 
 function AddNote() {
   const [value, setValue] = useState("");
-  const { notes, setNotes } = useContext(Context);
+  const { notes, setNotes } = useContext(CONTEXT);
 
   function addToList() {
     saveNoteToList(notes, setNotes, value);

@@ -1,15 +1,9 @@
-import React from "react";
-import { IContextNote, INote } from "../types/types";
-
-export const keyNotes = "notes";
-export const bodyProperty = "body";
-export const statusProperty = "status";
-
-export const Context = React.createContext({} as IContextNote);
+import { KEY_NOTES } from "./constants";
+import { INote } from "../types/types";
 
 export function saveNotes(setListNotes: Function, updateListNotes: INote[]) {
   setListNotes(updateListNotes);
-  localStorage.setItem(keyNotes, JSON.stringify(updateListNotes));
+  localStorage.setItem(KEY_NOTES, JSON.stringify(updateListNotes));
 }
 
 export function saveNoteToList(
@@ -37,15 +31,15 @@ export function changePropertyNote(
   setListNotes: Function,
   value?: string,
 ) {
-  const updateListNotes = [...listNotes].map((note: INote) => {
-    if (note.id === id) {
+  const updateListNotes = [...listNotes].map((item: INote) => {
+    if (item.id === id) {
       if (value) {
-        (note[propertyToChange] as string) = value;
+        (item[propertyToChange] as string) = value;
       } else {
-        (note[propertyToChange] as boolean) = !note[propertyToChange];
+        (item[propertyToChange] as boolean) = !item[propertyToChange];
       }
     }
-    return note;
+    return item;
   });
   saveNotes(setListNotes, updateListNotes);
 }

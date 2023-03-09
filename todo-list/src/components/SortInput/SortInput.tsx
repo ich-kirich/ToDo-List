@@ -1,15 +1,15 @@
 import styles from "./SortInput.module.scss";
 import { InputProps } from "../../types/types";
-import { bodyProperty } from "../../utils/notes";
+import { BODY_PROPERTY } from "../../libs/constants";
 
 function SortInput({ id, checked, ...props }: InputProps) {
   const alphabeticalSortText = "Alphabetical sorting";
   const statusSort = "Sorting by status";
   return (
-    <div className={styles.chooseSort__typeSort}>
+    <div className={styles.choose__typeSort}>
       <input type="radio" name="sort" id={id} checked={checked} {...props} />
       <span className={styles.typeSort__text}>
-        {id === bodyProperty ? alphabeticalSortText : statusSort}
+        {id === BODY_PROPERTY ? alphabeticalSortText : statusSort}
       </span>
     </div>
   );

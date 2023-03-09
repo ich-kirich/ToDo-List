@@ -1,13 +1,8 @@
-import { INote } from "../../types/types";
+import { IControlPanel } from "../../types/types";
 import ControlButton from "../ControlButton/ControlButton";
 import styles from "./ControlPanel.module.scss";
 
-function ControlPanel(props: {
-  note: INote;
-  deleteNote: Function;
-  changeStatus: Function;
-  editNote: Function;
-}) {
+function ControlPanel(props: IControlPanel) {
   const { note } = props;
   const { deleteNote } = props;
   const { changeStatus } = props;
@@ -23,9 +18,9 @@ function ControlPanel(props: {
       <ControlButton
         onClick={() => changeStatus(note.id)}
         className={
-          !note.status
-            ? styles.management__statusOk
-            : styles.management__statusClose
+          note.status
+            ? styles.management__statusClose
+            : styles.management__statusOk
         }
       >
         &nbsp;

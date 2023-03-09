@@ -6,19 +6,19 @@ import "./styles/style.scss";
 import { INote } from "./types/types";
 import SortList from "./components/SortList/SortList";
 import useSortedPosts from "./hooks/useNotes";
-import { keyNotes, bodyProperty, Context } from "./utils/notes";
+import { KEY_NOTES, BODY_PROPERTY, CONTEXT } from "./libs/constants";
 
 function App() {
   const loadNotesFromStorage = () => {
     let notes: INote[] = [];
-    if (localStorage.getItem(keyNotes)) {
-      notes = JSON.parse(localStorage.getItem(keyNotes) as string);
+    if (localStorage.getItem(KEY_NOTES)) {
+      notes = JSON.parse(localStorage.getItem(KEY_NOTES) as string);
     }
     return notes;
   };
 
   const loadNotes: INote[] = loadNotesFromStorage();
-  const [typeSort, setTypeSort] = useState(bodyProperty);
+  const [typeSort, setTypeSort] = useState(BODY_PROPERTY);
   const sortedNotes = useSortedPosts(loadNotes, typeSort);
   const [listNotes, setListNotes] = useState(sortedNotes);
   const contextValue = useMemo(
@@ -27,14 +27,14 @@ function App() {
   );
 
   return (
-    <Context.Provider value={contextValue}>
+    <CONTEXT.Provider value={contextValue}>
       <div className="App">
         <Header />
         <AddNote />
         <SortList typeSort={typeSort} setTypeSort={setTypeSort} />
         <ListNotes typeSort={typeSort} />
       </div>
-    </Context.Provider>
+    </CONTEXT.Provider>
   );
 }
 

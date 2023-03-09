@@ -14,3 +14,30 @@ export interface IContextNote {
   notes: INote[];
   setNotes: Function;
 }
+
+export interface ISortListProps {
+  typeSort: string;
+  setTypeSort: Function;
+}
+
+export interface INotes {
+  note: INote;
+}
+
+export interface IListNotes {
+  typeSort: string;
+}
+
+export interface IEditField {
+  value: string;
+  setValue: Function;
+  updateNote: Function;
+  id: number;
+}
+
+export interface IControlPanel {
+  note: INote;
+  deleteNote: Function;
+  changeStatus: Function;
+  editNote: Function;
+}

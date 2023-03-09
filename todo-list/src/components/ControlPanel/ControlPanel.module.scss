@@ -1,20 +1,20 @@
 .management {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
+}
 
-    .management__delete {
-        background-image: url(../../img/delete.svg);
-    }
-    
-    .management__edit {
-        background-image: url(../../img/edit.svg);
-    }
-    
-    .management__statusOk {
-        background-image: url(../../img/inProgress.svg);
-    }
-    
-    .management__statusClose {
-        background-image: url(../../img/completed.svg);
-    }
+.management__delete {
+  background-image: url(../../img/delete.svg);
+}
+
+.management__edit {
+  background-image: url(../../img/edit.svg);
+}
+
+.management__statusOk {
+  background-image: url(../../img/inProgress.svg);
+}
+
+.management__statusClose {
+  background-image: url(../../img/completed.svg);
 }
